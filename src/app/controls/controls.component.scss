@@ -1,0 +1,24 @@
+@import '../../colors.scss';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+}
+button {
+  border: 0;
+  background-color: $dark_color;
+  color: $light_color;
+  padding: .4em;
+  margin: 0 .4em;
+}
+
+button[disabled] {
+  background-color: $disabled-back-color;
+  color: $disabled-color;
+}
