@@ -3,7 +3,7 @@
 Conway's Game of Life implemented in Angular.
 
 Table of Contents:
-- [Install dependencies]
+- [Install dependencies](#install-dependencies)
 - [Development server](#development-server)
 - [Build](#build)
 - [Running unit tests](#running-unit-tests)
@@ -32,4 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## License
 
-This repository is available under [MIT License](https://choosealicense.com/licenses/mit/)
+This repository is available under [MIT License](https://choosealicense.com/licenses/mit/).
