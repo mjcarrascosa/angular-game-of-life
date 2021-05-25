@@ -1,6 +1,8 @@
 # Angular Game of Life
 
-Conway's Game of Life implemented in Angular.
+Conway's Game of Life implemented in Angular. [Play it](https://angular-game-of-life.web.app).
+
+
 
 Table of Contents:
 - [Install dependencies](#install-dependencies)
