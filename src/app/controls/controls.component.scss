@@ -1,5 +1,7 @@
 @import '../../colors.scss';
-
+.controls {
+  margin-top: 5px;
+}
 :host {
   display: flex;
   justify-content: space-between;

@@ -13,7 +13,6 @@
   height: 10px;
   background-color: $light_color;
   border: 1px solid $dark_color;
-  opacity: 75%;
 }
 
 .grid-cell:last-child {
@@ -22,5 +21,5 @@
 
 .alive {
   background-color: $dark_color;
-  border: 1x solid $light_color;
+  border: 1px solid $light_color;
 }
