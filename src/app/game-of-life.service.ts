@@ -12,9 +12,9 @@ export class GameOfLifeService {
 
   constructor() {
     this.generation = 0;
-    this.width = 5;
-    this.height = 5;
-    this.cells = this.generateCells(this.width, this.height);
+    this.width = 0;
+    this.height = 0;
+    this.cells = [];
 
   }
   initialize(width: number, height: number) {

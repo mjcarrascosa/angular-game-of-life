@@ -1,7 +1,10 @@
-<div class="grid-row" *ngFor="let row of grid">
-  <div class="grid-cell"
-       [class.alive]="cell.isAlive()"
-       *ngFor="let cell of row"
-       (click)="toggleCell(cell)">
-  </div>
-</div>
+  <table class="grid">
+    <tr class="grid-row" *ngFor="let row of grid">
+      <td
+        [class.alive]="cell.isAlive()"
+        class="grid-cell"
+        *ngFor="let cell of row"
+        (click)="toggleCell(cell)"
+      ></td>
+    </tr>
+  </table>

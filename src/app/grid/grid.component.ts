@@ -9,7 +9,7 @@ import { Cell } from '../cell.model';
 export class GridComponent implements OnInit {
   grid : Cell[][];
   constructor(private gameOfLifeService : GameOfLifeService) {
-    this.gameOfLifeService.initialize(50,30);
+    this.gameOfLifeService.initialize(100,40);
     this.grid = this.gameOfLifeService.getCells();
   }
 
