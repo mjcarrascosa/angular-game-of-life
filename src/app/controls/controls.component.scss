@@ -24,3 +24,7 @@ button[disabled] {
   background-color: $disabled-back-color;
   color: $disabled-color;
 }
+
+.disabled {
+  color: $disabled-color;
+}

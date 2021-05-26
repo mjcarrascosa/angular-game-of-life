@@ -8,9 +8,11 @@ import { GameOfLifeService } from '../game-of-life.service';
 export class ControlsComponent implements OnInit {
   private intervalId : number;
   private running : boolean;
+  cyclicBoard: boolean;
   constructor(private gameOfLifeService : GameOfLifeService) {
     this.intervalId = 0;
     this.running = false;
+    this.cyclicBoard=false;
   }
 
   ngOnInit(): void {
@@ -21,7 +23,7 @@ export class ControlsComponent implements OnInit {
   }
   run() : void {
     this.running = true;
-    this.intervalId = window.setInterval(() => {this.gameOfLifeService.nextGeneration();}, 100);
+    this.intervalId = window.setInterval(() => {this.gameOfLifeService.nextGeneration(this.cyclicBoard);}, 100);
   }
 
   stop() : void {

@@ -2,5 +2,14 @@
   <button [disabled]="isRunning" (click)="run()">Run</button>
   <button [disabled]="!isRunning" (click)="stop()">Stop</button>
   <button [disabled]="isRunning" (click)="reset()">Reset</button>
+  <label [class.disabled]="isRunning" for="cyclic">Cyclic board</label>
+  <input
+    [disabled]="isRunning"
+    type="checkbox"
+    name="cyclic"
+    id="cyclic"
+    [checked]="cyclicBoard"
+    (change)="cyclicBoard = !cyclicBoard"
+  />
 </div>
-<p>Generation {{this.getGeneration()}}</p>
+<p>Generation {{ this.getGeneration() }}</p>
