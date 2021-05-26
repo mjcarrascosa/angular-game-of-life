@@ -1,12 +1,10 @@
 export class Cell {
   alive: boolean;
   nextState: boolean;
-  updated: boolean;
 
   constructor(alive: boolean) {
     this.alive = alive;
-    this.nextState = false;
-    this.updated = false;
+    this.nextState = alive;
   }
 
   isAlive() : boolean {
@@ -16,17 +14,16 @@ export class Cell {
 
   toggle() : void {
     this.alive = !this.alive;
+    this.nextState=this.alive;
   }
 
   setNextState(nextState : boolean) : void {
     this.nextState = nextState;
-    this.updated = true;
   }
 
   update() : void {
-    if(this.updated) {
+    if(this.alive != this.nextState) {
       this.alive = this.nextState;
-      this.updated=false;
     }
   }
 
