@@ -1,3 +1,4 @@
+<div class="grid-container">
   <table class="grid">
     <tr class="grid-row" *ngFor="let row of grid">
       <td
@@ -5,6 +6,7 @@
         class="grid-cell"
         *ngFor="let cell of row"
         (click)="toggleCell(cell)"
-      ></td>
+      ><span></span></td>
     </tr>
   </table>
+</div>

@@ -1,7 +1,14 @@
 @import "../../../colors.scss";
 
+.grid-container {
+  width: 100%;
+  overflow: auto;
+  height: 350px;
+  white-space: nowrap;
+}
 .grid {
   border-spacing: 0;
+  width: auto;
 }
 
 .grid-row {
@@ -14,11 +21,16 @@
 }
 
 .grid-cell {
-  width: 10px;
-  height: 10px;
   background-color: $light_color;
   border: 1px solid $border_color;
 }
+
+.grid-cell span {
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
 
 .grid-cell:last-child {
   margin-right: 0;

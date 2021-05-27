@@ -1,7 +1,4 @@
 <div class="controls">
-  <button [disabled]="isRunning" (click)="run()">Run</button>
-  <button [disabled]="!isRunning" (click)="stop()">Stop</button>
-  <button [disabled]="isRunning" (click)="reset()">Reset</button>
   <label [class.disabled]="isRunning" for="cyclic">Cyclic board</label>
   <input
     [disabled]="isRunning"
@@ -11,5 +8,10 @@
     [checked]="cyclicBoard"
     (change)="cyclicBoard = !cyclicBoard"
   />
+</div>
+<div class="controls">
+  <button [disabled]="isRunning" (click)="run()">Run</button>
+  <button [disabled]="!isRunning" (click)="stop()">Stop</button>
+  <button [disabled]="isRunning" (click)="reset()">Reset</button>
 </div>
 <p>Generation {{ this.getGeneration() }}</p>
