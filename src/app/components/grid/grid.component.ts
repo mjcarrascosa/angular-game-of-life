@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GameOfLifeService } from '../game-of-life.service';
-import { Cell } from '../cell.model';
+import { GameOfLifeService } from '../../services/game-of-life.service';
+import { Cell } from '../../models/cell.model';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
