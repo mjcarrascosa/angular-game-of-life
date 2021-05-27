@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cell } from '../models/cell.model';
-
+import { Rule } from '../models/rule.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,12 +9,13 @@ export class GameOfLifeService {
   private cells: Cell[][];
   private width: number;
   private height: number;
-
+  private rule: Rule;
   constructor() {
     this.generation = 0;
     this.width = 0;
     this.height = 0;
     this.cells = [];
+    this.rule = new Rule("23/3");
 
   }
   initialize(width: number, height: number) {
@@ -36,13 +37,7 @@ export class GameOfLifeService {
   nextGeneration(cyclicBoard: boolean): void {
     for (let y = 0; y < this.height; y++) {
       for (let x = 0; x < this.width; x++) {
-        let neighbours = this.getNeighbours(x, y, cyclicBoard);
-        if (this.cells[y][x].isAlive() && (neighbours < 2 || neighbours > 3)) {
-          this.cells[y][x].setNextState(false);
-        }
-        if (!this.cells[y][x].isAlive() && neighbours === 3) {
-          this.cells[y][x].setNextState(true);
-        }
+        this.cells[y][x].checkRule(this.rule, this.getNeighbours(x, y, cyclicBoard))
       }
     }
     for (let y = 0; y < this.height; y++) {
@@ -54,7 +49,7 @@ export class GameOfLifeService {
   }
 
   private getNeighbours(x: number, y: number, cyclicBoard: boolean): number {
-    return   this.getPossibleNeighbours(x, y, cyclicBoard)
+    return this.getPossibleNeighbours(x, y, cyclicBoard)
       .filter(offset => this.isAlive(offset.x, offset.y))
       .length;
   }
