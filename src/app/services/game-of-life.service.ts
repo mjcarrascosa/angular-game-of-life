@@ -9,13 +9,15 @@ export class GameOfLifeService {
   private cells: Cell[][];
   private width: number;
   private height: number;
+  private ruleStr: string;
   private rule: Rule;
   constructor() {
     this.generation = 0;
     this.width = 0;
     this.height = 0;
     this.cells = [];
-    this.rule = new Rule("23/3");
+    this.ruleStr = "S23/B3";
+    this.rule = new Rule(this.ruleStr);
 
   }
   initialize(width: number, height: number) {
@@ -25,6 +27,14 @@ export class GameOfLifeService {
     this.cells = this.generateCells(this.width, this.height);
   }
 
+  setRule(rule :string) : void {
+    this.ruleStr = rule;
+    this.rule = new Rule(rule);
+  }
+
+  getRule() : string {
+    return this.ruleStr;
+  }
 
   getCells(): Cell[][] {
     return this.cells;

@@ -8,10 +8,26 @@
     [checked]="cyclicBoard"
     (change)="cyclicBoard = !cyclicBoard"
   />
+  <fieldset>
+    <legend>Rules:</legend>
+    <div *ngFor="let rule of rules; first as isFirst">
+      <label for="r{{ rule }}">{{ rule }}</label>
+      <input
+        id="r{{ rule }}"
+        type="radio"
+        name="rule"
+        value="{{ rule }}"
+        [checked]="isFirst"
+        [disabled]="isRunning"
+        [(ngModel)]="selectedRule"
+        (change)="setRule()"
+      />
+    </div>
+  </fieldset>
+  <div class="buttonGroup">
+    <button [disabled]="isRunning" (click)="run()">Run</button>
+    <button [disabled]="!isRunning" (click)="stop()">Stop</button>
+    <button [disabled]="isRunning" (click)="reset()">Reset</button>
+  </div>
+  <p>Generation {{ this.getGeneration() }}</p>
 </div>
-<div class="controls">
-  <button [disabled]="isRunning" (click)="run()">Run</button>
-  <button [disabled]="!isRunning" (click)="stop()">Stop</button>
-  <button [disabled]="isRunning" (click)="reset()">Reset</button>
-</div>
-<p>Generation {{ this.getGeneration() }}</p>

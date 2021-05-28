@@ -1,6 +1,15 @@
 @import '../../../colors.scss';
 .controls {
-  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.controls fieldset {
+  display: flex;
+}
+
+.controls fieldset input{
+  margin-right: 15px;
 }
 /*
 :host {
@@ -11,7 +20,6 @@
 
 .buttonGroup {
   display: flex;
-  align-items: center;
 }
 button {
   border: 0;
